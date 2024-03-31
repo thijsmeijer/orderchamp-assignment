@@ -37,7 +37,6 @@ class SendVoucherCommand extends Command
             $voucher = rand(1000000, 6000000);
 
             Voucher::create([
-                'order_id' => $order->id,
                 'code' => $voucher
             ]);
 

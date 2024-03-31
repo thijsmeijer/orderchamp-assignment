@@ -56,6 +56,7 @@ class OrdersController extends Controller
             $voucher = Voucher::where('code', $request->discount)->where('is_used', false);
 
             $voucher?->update([
+                'order_id' => $order->id,
                 'is_used' => true,
             ]);
         }
